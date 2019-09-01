@@ -1,4 +1,5 @@
 
+############		https://codeforces.com/contest/1207/problem/A		###########
 t = 3
 p = 7
 b = 5
