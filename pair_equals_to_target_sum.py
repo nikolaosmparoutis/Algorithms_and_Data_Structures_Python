@@ -1,5 +1,6 @@
-# Find a pair, assume there is at most one pair which has sum equals to targetSum 
+# Find a pair which has sum equals to targetSum, assume there is at most one pair.
 
+##### Solution 1: 
 array = [3, 5, -4, 8, 11, 1, -1, 6]
 targetSum = 10
 hash_map = {}
@@ -21,8 +22,31 @@ print(twoNumberSum(array, targetSum))
 # Space = O(2n)
 
 
+##### Solution 2:
+
+array = [3, 5, -4, 8, 11, 1, -1, 6]
+targetSum = 10
+
+def twoNumberSum(array, targetSum):
+    array.sort()
+    left_pos = 0
+    right_pos = len(array) - 1
+    while left_pos <= right_pos:
+        if array[left_pos] + array[right_pos] < targetSum:
+            left_pos += 1
+        elif array[left_pos] + array[right_pos] > targetSum:
+            right_pos -= 1
+        else:
+            return [array[left_pos], array[right_pos]]
+	return []
+
+print(twoNumberSum(array, targetSum))
+
+# T(n) = O(nlong) from sorting
+#         + O(n) from while loop in worst case, where n = array length
+
 '''
-Attention: The below solution does not take advantage the use of hash maps in O(1) 
+Attention: The below solution does not take advantage the use of hash maps in O(1) like the Solution 1
 because we made a nasty mistake, used hash_map.values() but this is O(n).
 Instead we use hash_map storing the values as keys.
 Be aware that even the dict.keys() is O(n) it generates a list and then iterates over it.
