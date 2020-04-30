@@ -1,10 +1,15 @@
-# Find a pair which has sum equals to targetSum, assume there is at most one pair.
+# Find a pair in a given list which has sum equals to targetSum, assume there is at most one pair.
+
 
 ##### Solution 1: 
+
 array = [3, 5, -4, 8, 11, 1, -1, 6]
 targetSum = 10
 hash_map = {}
 
+# we solve y + x = targetSum => y = targetSum - x, so if we assume that y exists in the hash maps,  
+# previously we store the array as keys of a new hash_map (distionary),
+# then we are sure that x + y = targetSum
 def twoNumberSum(array, targetSum):
 	for x in array:
 		y = targetSum - x
@@ -27,6 +32,9 @@ print(twoNumberSum(array, targetSum))
 array = [3, 5, -4, 8, 11, 1, -1, 6]
 targetSum = 10
 
+# sort the array so: [-4, -1, 1, 3, 5, 6, 8, 11], set two pointers one the the legt one to the right
+# pointers act as the lower and uper bound and if x+y < or targetSum we limit the bounds for searching 
+# because the array is already sorted so we converge the summation to the targetSum.  
 def twoNumberSum(array, targetSum):
     array.sort()
     left_pos = 0
