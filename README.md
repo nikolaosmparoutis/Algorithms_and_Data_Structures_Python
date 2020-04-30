@@ -1,5 +1,5 @@
-# Algorithmic Competitions from the famous codeforces.com
+# Algorithmic Competitions from the famous codeforces.com and other resources.
 
-My solutions outside of the competions time window 
-for the maximization of problems' efficiency and the holistic learning.Moreover i do not have expertise in these kind of fast 2 hours competitions and optimization problems. (2019)
+My code is part of my education and as refresh of my knowledge outside of the competions time window.
+
 
