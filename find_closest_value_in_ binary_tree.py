@@ -4,10 +4,10 @@ from binarytree import bst
 target = 10
 closest = float("inf")
 tree = bst()        #generates random binary trees
-print(" - generate a random tree from python lib-")
+print(" -generate a random tree from python lib -")
 print(tree)
 
-# On AVG case:T(n) = O(logn), Space: O(logn) due to recursion calling the call stack memory O(logn) times
+# On AVG case:T(n) = O(logn), Space: O(logn) due to recursion calling the call stack O(logn) times to use the stack frames of the subroutines.
 # On worst Case:  T(n) = O(n) , Space: O(n) due to falling into a linear list.
 
 def findClosestValueInBst(tree, target, closest):
