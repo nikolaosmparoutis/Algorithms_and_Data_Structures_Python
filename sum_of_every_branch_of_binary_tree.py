@@ -67,7 +67,7 @@ def preorder(node, newCurrentSum, sums_ls):
 print(branchSums(tree))
 
 
-# The same code with PRINTS for the grasp of the concept and the future review.
+# The same code with PRINTS for the grasp of the concept.
 
 # class BinaryTree:
 #     def __init__(self, value):
