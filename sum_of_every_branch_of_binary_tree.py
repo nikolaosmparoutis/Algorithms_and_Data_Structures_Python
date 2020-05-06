@@ -35,7 +35,7 @@ T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	Worst case where the tree is flattened to a list: 
 	O(n), n= number of node m = number of edges or keys.
 '''
-# Delete the prints for better code readability, they stayed for the grasp of concept. 
+# Delete the prints for better code readability, they stayed for the grasp of the concept and future reusability
 
 class BinaryTree:
     def __init__(self, value):
