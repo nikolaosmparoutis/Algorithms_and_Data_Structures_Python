@@ -32,7 +32,7 @@ T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	
 	Space = O(2^depth_levels) = O(2^4) = O(16) = O(n-1)
 	 
-	Worst case where the the tree flattened to a list: 
+	Worst case where the tree is flattened to a list: 
 	O(n), n= number of node m = number of edges or keys.
 '''
 
