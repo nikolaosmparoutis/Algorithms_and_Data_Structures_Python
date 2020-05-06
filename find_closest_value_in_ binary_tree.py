@@ -8,8 +8,8 @@ print(" -generate a random tree from python lib -")
 print(tree)
 
 # Solution 1
-# On Average: time O(logn), space  O(1)
-# Worst Case: time O(n), O(n)
+# On Average: time O(logn), space O(1)
+# Worst Case: time O(n), soace O(n)
 def findClosestValueInBst(tree, target, closest):
     while tree is not None:
         if abs(target - closest) > abs(target - tree.value):
