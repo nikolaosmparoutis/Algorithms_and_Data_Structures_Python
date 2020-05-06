@@ -35,46 +35,36 @@ T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	Worst case where the tree is flattened to a list: 
 	O(n), n= number of node m = number of edges or keys.
 '''
-
 class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+    def __init__(self, tree):
+        self.tree = tree
 
-def branchSums(root):
-    sums_ls = []
-    branchSumsHelper(root, 0, sums_ls)
-    return sums_ls
+	
+    def branchSums(self, root):
+        sums_ls = []
+        self.branchSumsHelper(root, 0, sums_ls)
+	return sums_ls
 
+    def branchSumsHelper(self, node, currentSum, sums_ls):
+        if node is None:
+            return
+        newCurrentSum = node.value + currentSum
 
-def branchSumsHelper(node, currentSum, sums_ls):
-    if node is None:
+        if node.left is None and node.right is None:
+            sums_ls.append(newCurrentSum)
+        self.preorder(node, newCurrentSum, sums_ls)
+    # *Import*:
+    # Resoursion creates Subroutines and this stores EVERY variable's state in stack frame, so in every node the currentSum is saved.
+    def preorder(self, node, newCurrentSum, sums_ls):
+        self.branchSumsHelper(node.left, newCurrentSum, sums_ls)
+        self.branchSumsHelper(node.right, newCurrentSum, sums_ls)
         return
-    newCurrentSum = node.value + currentSum
 
-    if node.left is None and node.right is None:
-        sums_ls.append(newCurrentSum)
-    preorder(node, newCurrentSum, sums_ls)
-
-# *Import*:
-# Resoursion creates Subroutines and this stores EVERY variable's state in stack frame, so in every node the currentSum is saved.
-def preorder(node, newCurrentSum, sums_ls):
-    branchSumsHelper(node.left, newCurrentSum, sums_ls)
-    branchSumsHelper(node.right, newCurrentSum, sums_ls)
-    return
-
-print(branchSums(tree))
+btree = BinaryTree(tree)
+print(btree.branchSums(tree))
 
 
-# The same code with PRINTS for the grasp of the concept.
-
-# class BinaryTree:
-#     def __init__(self, value):
-#         self.value = value
-#         self.left = None
-#         self.right = None
-
+# The code with PRINTS for the grasp of the concept.
 
 # def branchSums(root):
 #     sums_ls = []
