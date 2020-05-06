@@ -26,15 +26,15 @@ T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	+ 2^1 = 2 Total nodes = 3
 	+ 2^2 = 4 Total nodes = 7
 	+ 2^3 = 8 Total nodes = 15
-	----
+	+ ...
+	+ 2^depth
+	---- we take the log on both sides to take the height...
 	log_2(2^(depth)) = log_2(Total nodes)
 	=>  height = depth - 1 = log_2(total nodes)-1 = log_2(15)-1 = 3.9-1 = 2.9 
-
-	**
+	
 	Space = O(2^height) = O(2^log_2(n)-1) = O(2^3) = O(16) = O(n)
 
-	Worst case where the the tree flattened to a list: 
-	O(n), n= number of nodes
+	One the Worst case the tree is flattened to a list is also O(n), n= number of nodes
 '''
 
 class BinaryTree:
