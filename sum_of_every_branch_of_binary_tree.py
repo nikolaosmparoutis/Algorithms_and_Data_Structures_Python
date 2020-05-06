@@ -35,7 +35,6 @@ T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	Worst case where the tree is flattened to a list: 
 	O(n), n= number of node m = number of edges or keys.
 '''
-# Delete the prints for better code readability, they stayed for the grasp of the concept and future reusability
 
 class BinaryTree:
     def __init__(self, value):
@@ -43,38 +42,71 @@ class BinaryTree:
         self.left = None
         self.right = None
 
-
 def branchSums(root):
     sums_ls = []
     branchSumsHelper(root, 0, sums_ls)
-    return print("final array sums_ls:", sums_ls)
+    return sums_ls
 
 
 def branchSumsHelper(node, currentSum, sums_ls):
-    print("node=", node)
     if node is None:
-        print("node is None")
         return
-
     newCurrentSum = node.value + currentSum
-    print("node.value=", node.value)
-    print("currentSum=", currentSum)
-    print("newCurrentSum=", newCurrentSum)
+
     if node.left is None and node.right is None:
-        print('leaf->', node.value)
         sums_ls.append(newCurrentSum)
-        print('sums_ls :', sums_ls)
-    print('node.value=', node.value)
-    print("node.left=", node.left)
-    print("node.right=", node.right)
     preorder(node, newCurrentSum, sums_ls)
 
 # *Import*:
-# Recursion creates Subroutines and this stores EVERY variable's state in stack frame, so in every node the currentSum is saved.
+# Resoursion creates Subroutines and this stores EVERY variable's state in stack frame, so in every node the currentSum is saved.
 def preorder(node, newCurrentSum, sums_ls):
     branchSumsHelper(node.left, newCurrentSum, sums_ls)
-    print("i turn right...")
     branchSumsHelper(node.right, newCurrentSum, sums_ls)
     return
 
-branchSums(tree)
+print(branchSums(tree))
+
+
+# The same code with PRINTS for the grasp of the concept and the future review.
+
+# class BinaryTree:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
+
+
+# def branchSums(root):
+#     sums_ls = []
+#     branchSumsHelper(root, 0, sums_ls)
+#     return print("final array sums_ls:", sums_ls)
+
+
+# def branchSumsHelper(node, currentSum, sums_ls):
+#     print("node=", node)
+#     if node is None:
+#         print("node is None")
+#         return
+
+#     newCurrentSum = node.value + currentSum
+#     print("node.value=", node.value)
+#     print("currentSum=", currentSum)
+#     print("newCurrentSum=", newCurrentSum)
+#     if node.left is None and node.right is None:
+#         print('leaf->', node.value)
+#         sums_ls.append(newCurrentSum)
+#         print('sums_ls :', sums_ls)
+#     print('node.value=', node.value)
+#     print("node.left=", node.left)
+#     print("node.right=", node.right)
+#     preorder(node, newCurrentSum, sums_ls)
+
+# # *Import*:
+# # Recursion creates Subroutines and this stores EVERY variable's state in stack frame, so in every node the currentSum is saved.
+# def preorder(node, newCurrentSum, sums_ls):
+#     branchSumsHelper(node.left, newCurrentSum, sums_ls)
+#     print("i turn right...")
+#     branchSumsHelper(node.right, newCurrentSum, sums_ls)
+#     return
+
+# branchSums(tree)
