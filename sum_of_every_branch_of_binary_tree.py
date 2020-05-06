@@ -1,40 +1,39 @@
-
-# pip install binarytree
-from binarytree import bst
-
-tree = bst()  # generates random binary trees
-print(" - generate a random tree from python lib-")
-print(tree)
+'''Problem: Write a function that takes in a Binary Tree and returns a list of its branch
+sums ordered from leftmost branch sum to rightmost branch sum.
+A branch sum is the sum of all values in a Binary Tree branch. A Binary
+Tree branch is a path of nodes in a tree that starts at the root node and ends 
+at any leaf node"
+'''
 
 '''Method:
-Using Depth first search we traverse the tree, the preorder 
+Using Depth first search i traverse the tree, the preorder 
 is the desired method because it traverses 
 the root or parent node -> left -> right  
 In contrast inorder and postorder start from the leafs.
 
-**Time complexity:
-Traverses each element one time = O(n)
-In detail:
+** Time complexity:
+
 T(n) = 2*T(n/2) + f(1) = O(n) + O(1) = O(n) where n = number of nodes
 	T(n/2) = each subproblem size (left and right subtree) 
 	O(1) for other operations no participating in the recursion: 
-	comparison between left,right,parent and other operations like printing.
-
-**Space complexity:  
+	like comparison between left,right,parent and other operations like printing.
+	
+** Space complexity:  
+	
 	AVG:
 	  2^0 = 1 Total nodes = 1
 	+ 2^1 = 2 Total nodes = 3
 	+ 2^2 = 4 Total nodes = 7
 	+ 2^3 = 8 Total nodes = 15
-	+ ...
-	+ 2^depth
-	---- we take the log on both sides to take the height...
-	log_2(2^(depth)) = log_2(Total nodes)
-	=>  height = depth - 1 = log_2(total nodes)-1 = log_2(15)-1 = 3.9-1 = 2.9 
-	
-	Space = O(2^height) = O(2^log_2(n)-1) = O(2^3) = O(16) = O(n)
 
-	One the Worst case the tree is flattened to a list is also O(n), n= number of nodes
+	--log each side to get the depth_levels
+	log_2(2^(depth_levels)) = log_2(Total nodes)
+	=>  depth_levels = log_2(total nodes) = log_2(15) = 3.9
+	
+	Space = O(2^depth_levels) = O(2^4) = O(16) = O(n-1)
+	 
+	Worst case where the the tree flattened to a list: 
+	O(n), n= number of node m = number of edges or keys.
 '''
 
 class BinaryTree:
