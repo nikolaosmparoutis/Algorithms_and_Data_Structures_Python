@@ -31,7 +31,7 @@ graph = {
     'E' : ['F'],
     'F' : []
 }
-	A
+    A
    / \
   B   C
  / \   \
@@ -50,7 +50,7 @@ last called subroutine.
 When we are at D vertex has no children 
 the last subroutine in call stack is the parent of the D node, B, hop back to B subroutine.
 'E' is not visited so it hops on node 'E',
-from 'E' to 'F' F has no children so the next subroutine in call stack before 'B' is the stack frame 'A'.
+from 'E' to 'F' F has no children so returns to Subrouitines from B, B cleaned and returns to its parent A for the 'C' key.
 and so on and so forth.
 So the subroutines are V and each one hops back x number of times were in total are E.
 So T(n) = O(V+E)
