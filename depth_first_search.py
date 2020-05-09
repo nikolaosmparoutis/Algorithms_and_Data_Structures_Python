@@ -68,7 +68,7 @@ On a AVG case
 	We also has + O(V) for the array to store the nodes.
 	So is O(2V) ~= O(V)
 
-
+Useful sources
 https://www.educative.io/edpresso/how-to-implement-depth-first-search-in-python
 https://www.shmoop.com/computer-science/lists/call-stack.html
 '''
