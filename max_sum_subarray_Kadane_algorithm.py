@@ -7,7 +7,6 @@ and it's value.
 
 def kadanesAlgorithm(array):
     maxEndingHere, maxSoFar = array[0], array[0]
-    start, end = 0, 0
     for i in range(1, len(array)):
         maxEndingHere = max(maxEndingHere + array[i], array[i])
         maxSoFar = max(maxEndingHere, maxSoFar)
