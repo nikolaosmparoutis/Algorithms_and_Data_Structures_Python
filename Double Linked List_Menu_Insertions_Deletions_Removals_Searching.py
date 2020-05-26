@@ -1,3 +1,7 @@
+# Implemetation of Double Linked List class:
+# Insertions at the Head or Tail, specifc Position, Before or After a node, Removal of a given node,
+# Search of node with value, Display, Menu of commands with a small error handling.
+# the comments are just in case i may forget something in the future.  
 
 class Node:
     def __init__(self, value):
