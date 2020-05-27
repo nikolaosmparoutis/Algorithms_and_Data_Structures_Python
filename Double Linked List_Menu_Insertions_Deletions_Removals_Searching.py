@@ -135,12 +135,11 @@ class DoublyLinkedList:
 
 def menu(a_dllist):
     while True:
-        try :
-            print('The list: ', end='')
-            a_dllist.display()
-            print()
+        print('The list: ', end='')
+        a_dllist.display()
+        print()
+        try:
             do = input('What would you like to do? ').split()
-
             operation = do[0].strip().lower()
             if operation == 'insert':
                 data = int(do[1])
@@ -156,6 +155,7 @@ def menu(a_dllist):
                         position_node = do[3].strip().lower()
                         a_dllist.insertAtPosition(position_node,new_node)
                 else:
+
                     index = int(position)
                     ref_node = a_dllist.get_node(index)
                     if ref_node is None:
@@ -167,13 +167,13 @@ def menu(a_dllist):
                         a_dllist.insertBefore(ref_node, new_node)
 
             elif operation == 'remove':
-                if len(do) == 3 :
-                    print("len = ", len(do))
-                    suboperation = do[2].split()
-                    if suboperation[0] == 'value':
-                        data = int(do[1])
-                        print("data = ", data)
-                        a_dllist.removeNodesWithValue(data)
+                if len(do) < 3 :
+                    node_index = int(do[1])
+                    data = a_dllist.get_node(node_index)
+                    a_dllist.remove(data)
+                elif do[2].split()[0] == 'value':
+                    data = int(do[1])
+                    a_dllist.removeNodesWithValue(data)
 
             elif operation == 'search':
                 data = int(do[1])
@@ -193,9 +193,13 @@ def menu(a_dllist):
                     print('No such index.')
                     continue
                 a_dllist.remove(node)
-        except IndexError or ValueError:
-            print('Wrong command. Follow the menu\'s commands.')
-            break
+
+        except (IndexError, ValueError) as e:
+            err_str = repr(e).split('(')[0]
+            if err_str == "IndexError":
+                print('Wrong command. Follow the menu\'s commands.')
+            elif err_str == "ValueError":
+                print(' Commands take numbers or character at specific positions. Follow the menu\'s commands.')
 
 
 if __name__ == '__main__':
