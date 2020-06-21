@@ -1,9 +1,8 @@
 	# Check the monotonicity of a numeric array for all type of  posibilities:
 	# An  problem which look seasy if you do sorting but it is T=(nlong)
-	# but hard if you do not do the way of a newbie or with numpy. Just try it and see.
 	# I solve this in T=O(N) and Space O(1)
 	# Thinking a concept of memory momentum from the Machine Learning gradient search.
-	
+	# Unittests are in unittests_monotonic_array.py
 def isMonotonic(array):
 	memoryOfDownDirection = False
 	memoryOfUpDirection = False
