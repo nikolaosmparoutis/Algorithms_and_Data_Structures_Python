@@ -2,7 +2,7 @@
 # T(n) = O(n/2) | space O(1)
 # using the symmetry to search on the half of the input
 
-# Remeber that len and range need a marriage in types and
+# Remember that len and range need a marriage in types and
 # string slicing starts from 0 indexing while len do not.
 
 def isPalindrome(string):
