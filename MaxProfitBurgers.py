@@ -1,5 +1,4 @@
-## Variable names and clean code does not matter in these kind of competitions, nobody cares about the details 
-# or to maintain the code or extend it to build an empire of fast foods with burgers.
+## Variable names and clean code does not matter in competitions.
 
 ############		https://codeforces.com/contest/1207/problem/A		###########
 t = 3
