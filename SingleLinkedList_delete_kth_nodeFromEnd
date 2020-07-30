@@ -1,0 +1,37 @@
+#write a function that removes the k th node from the end of an one way (singly) linked in list
+# T(N)=O(N) Space O(1)
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def removeKthNodeFromEnd(head, k):
+    cnt = 0 
+	lenList = 0
+	current1 = head 
+	current2 = head.next
+	while current1.next is not None : 
+		current1=current1.next
+		lenList += 1 
+		distanceFromHead = lenList + 1 - k
+	current1 = head
+    while current1.next is not None : 
+		if distanceFromHead == 0: 
+			head.value = head.next.value
+			head.next=head.next.next 
+			print("head value",head.value) 
+			return
+        if cnt == distanceFromHead-1: 
+			print(current1.value) 
+            if current2.next is not None:
+                current1.next = current2.next 
+				print(current1.value) 
+            else: 
+				current1.next = current2.next 
+			return 
+		current1=current1.next
+		current2=current2.next
+		cnt += 1
+	return
+	
