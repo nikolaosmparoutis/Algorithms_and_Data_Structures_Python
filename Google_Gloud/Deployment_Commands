@@ -1,0 +1,37 @@
+<Deploy code to Google Cloud Platform Instance>
+
+First create an isolated virtual environment. 
+This ensures that our app does not interfere with other Python applications 
+that may be available on our system.
+
+    virtualenv --python python3 ~/envs/<new_X_directory>
+
+Activate your newly created virtual environment:
+
+    source ~/envs/<new_X_directory>/bin/activate
+
+Upload the file through the terminal 
+
+Find where is the uploaded .py file
+
+    find . -name "<filename*>"
+
+Create the directory:
+
+    mkdir <directory_name> 
+
+Rename the directory if you need a better name:
+
+    find . -depth -type d -name <source_directory> -execdir mv {} <target_directory> \;
+
+Move every .py files from the uploading location to the new directory
+
+    mv *.py <destination_directory>
+
+Execute the python file:
+
+    python <file>
+
+
+
+
