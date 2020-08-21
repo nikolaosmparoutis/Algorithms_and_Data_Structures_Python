@@ -1,4 +1,4 @@
-# T(n)= O(logN) we cut in half the array after each iteration and adjuct the left and right pointers by one position | Space O(1)
+# T(n)= O(logN) we cut in half the array after each iteration and adjuct the left or right pointer by one position | Space O(1)
 def binarySearch(array, target):
     leftPtr = 0
     rightPtr = len(array) - 1
